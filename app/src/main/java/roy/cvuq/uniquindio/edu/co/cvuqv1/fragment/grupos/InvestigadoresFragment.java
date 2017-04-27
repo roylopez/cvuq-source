@@ -86,7 +86,7 @@ public class InvestigadoresFragment extends Fragment implements AdaptadorDeInves
     }
 
     @Override
-    public void onClickPosition(int pos) {
+    public void onClickInvestigatorPosition(int pos) {
         Log.d("investigadors","bu");
     }
 }

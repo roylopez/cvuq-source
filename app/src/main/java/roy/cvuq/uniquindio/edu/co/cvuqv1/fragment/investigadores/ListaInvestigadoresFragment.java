@@ -53,7 +53,7 @@ public class ListaInvestigadoresFragment extends Fragment implements AdaptadorDe
         listadoDeInvestigadores.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
     }
 
-    public void onClickPosition(int pos) {
+    public void onClickInvestigatorPosition(int pos) {
         listener.onInvestigadorSeleccionado(investigadores.get(pos));
     }
 

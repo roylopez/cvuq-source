@@ -82,62 +82,22 @@ public class SearchDialogFragment extends DialogFragment implements View.OnClick
     }
 
     private void crearGrupos() {
+
         grupos = new ArrayList();
 
-        List<String> lineasG1 = new ArrayList<>(), lineasG2 = new ArrayList<>(), lineasG3 = new ArrayList<>(), lineasG4 = new ArrayList<String>();
-        lineasG1.add("Bases de datos");
-        lineasG1.add("Redes de computadoras");
-        lineasG1.add("Mineria");
-
-        investigadores = new ArrayList<Investigador>();
-        Investigador i1 = new Investigador();
-        Investigador i2 = new Investigador();
-        Investigador i3 = new Investigador();
-        Investigador i4 = new Investigador();
-        Investigador i5 = new Investigador();
-
-        i1.setNombre("Pepito");
-        i1.setApellido("Perez");
-        i1.setLink("www.cvlac.com/pepito");
-        i1.setCategoria("Categoria 2");
-        i1.setLineasInvestigacion((ArrayList) lineasG1);
-
-        i2.setNombre("Pepita");
-        i2.setApellido("Lopez");
-        i2.setLineasInvestigacion((ArrayList) lineasG1);
-
-        i3.setNombre("Lupita");
-        i3.setApellido("Luna");
-        i3.setLineasInvestigacion((ArrayList) lineasG1);
-
-        i4.setNombre("Marcus");
-        i4.setApellido("Cornelious");
-        i4.setLineasInvestigacion((ArrayList) lineasG1);
-
-        i5.setNombre("Serena");
-        i5.setApellido("Williams");
-        i5.setLineasInvestigacion((ArrayList) lineasG1);
-
-        investigadores.add(i1);
-        investigadores.add(i2);
-        investigadores.add(i3);
-        investigadores.add(i4);
-        investigadores.add(i5);
-
-        lineasG2.add("Bases de datos");
-        lineasG2.add("Mineria");
-        lineasG2.add("Gestion del conocimiento");
-
-        lineasG4.add("Redes de computadoras");
-        lineasG4.add("Ingenieria de software");
-        lineasG4.add("Mineria");
-
+        investigadores = new ArrayList();
+        List<String> lineasG1 = new ArrayList<>(), lineasG2 = new ArrayList<>(), lineasG3 = new ArrayList<>();
 
         Investigador lider = new Investigador();
         lider.setNombre("Manu");
         lider.setApellido("Lalu");
-        lider.setLineasInvestigacion((ArrayList) lineasG2);
-
+        lider.setGenero("Masculino");
+        lider.setFormacion("Ing Sistemas");
+        lider.setEmail("pepito@uq.com");
+        lider.setLink("www.cvlac.com/pepito");
+        lider.setCategoria("Categoria 2");
+        lider.setNacionalidad("Colombia");
+        lider.setLineasInvestigacion((ArrayList) lineasG1);
 
         Grupo g1 = new Grupo();
         g1.setCategoria("Categoria C");
@@ -147,9 +107,10 @@ public class SearchDialogFragment extends DialogFragment implements View.OnClick
         g1.setSigla("GRID");
         g1.setFoto(12300);
         g1.setLider(lider);
+        lider.setGrupo(g1);
         g1.setInvestigadores(investigadores);
         g1.setLink("www.cvlac.com/grid");
-        g1.setLineasInvestigacion(lineasG4);
+        g1.setLineasInvestigacion(lineasG1);
 
 
         Grupo g2 = new Grupo();
@@ -184,6 +145,87 @@ public class SearchDialogFragment extends DialogFragment implements View.OnClick
         grupos.add(g2);
         grupos.add(g3);
         grupos.add(g4);
+
+
+        lineasG1.add("Bases de datos");
+        lineasG1.add("Redes de computadoras");
+        lineasG1.add("Mineria");
+
+        lineasG2.add("Bases de datos");
+        lineasG2.add("Mineria");
+        lineasG2.add("Gestion del conocimiento");
+
+        lineasG3.add("Redes de computadoras");
+        lineasG3.add("Ingenieria de software");
+        lineasG3.add("Mineria");
+
+        Investigador i1 = new Investigador();
+        Investigador i2 = new Investigador();
+        Investigador i3 = new Investigador();
+        Investigador i4 = new Investigador();
+        Investigador i5 = new Investigador();
+
+        i1.setNombre("Pepito");
+        i1.setApellido("Perez");
+        i1.setGrupo(g1);
+        i1.setGenero("Masculino");
+        i1.setFormacion("Ing Sistemas");
+        i1.setEmail("pepito@uq.com");
+        i1.setLink("www.cvlac.com/pepito");
+        i1.setCategoria("Categoria 2");
+        i1.setNacionalidad("Colombia");
+        i1.setLineasInvestigacion((ArrayList) lineasG1);
+
+        i2.setNombre("Pepita");
+        i2.setGenero("Femenino");
+        i2.setFormacion("Ing Sistemas y yap");
+        i2.setGrupo(g1);
+        i2.setLink("www.cvlac.com/pepita");
+        i2.setEmail("pepita@uq.com");
+        i2.setCategoria("Categoria 1");
+        i2.setNacionalidad("Colombia");
+        i2.setApellido("Lopez");
+        i2.setLineasInvestigacion((ArrayList) lineasG1);
+
+        i3.setNombre("Lupita");
+        i3.setApellido("Luna");
+        i3.setGenero("Femenino");
+        i3.setCategoria("Categoria 3");
+        i3.setGrupo(g1);
+        i3.setFormacion("Ing de Sistemas");
+        i3.setLink("www.cvlac.com/lupita");
+        i3.setEmail("lupita@uq.com");
+        i3.setNacionalidad("Colombia");
+        i3.setLineasInvestigacion((ArrayList) lineasG1);
+
+        i4.setNombre("Marcus");
+        i4.setApellido("Cornelious");
+        i4.setEmail("marcus@uq.com");
+        i4.setGenero("Masculino");
+        i4.setNacionalidad("Colombia");
+        i4.setGrupo(g1);
+        i4.setCategoria("Categoria 2");
+        i4.setFormacion("Ing de Sistemas");
+        i4.setLink("www.cvlac.com/marcus");
+        i4.setLineasInvestigacion((ArrayList) lineasG2);
+
+        i5.setNombre("Serena");
+        i5.setNacionalidad("Colombia");
+        i5.setGenero("Femenino");
+        i5.setEmail("serena@uq.com");
+        i5.setGrupo(g1);
+        i5.setFormacion("Ing de Sistemas");
+        i5.setCategoria("Categoria 1");
+        i5.setLink("www.cvlac.com/serena");
+        i5.setApellido("Williams");
+        i5.setLineasInvestigacion((ArrayList) lineasG2);
+
+        investigadores.add(lider);
+        investigadores.add(i1);
+        investigadores.add(i2);
+        investigadores.add(i3);
+        investigadores.add(i4);
+        investigadores.add(i5);
 
     }
 

@@ -69,13 +69,13 @@ public class AdaptadorDeInvestigador extends RecyclerView.Adapter<AdaptadorDeInv
 
         @Override
         public void onClick(View view) {
-            listener.onClickPosition(getAdapterPosition());
+            listener.onClickInvestigatorPosition(getAdapterPosition());
         }
 
     }
 
     public interface OnClickAdaptadorDeInvestigador {
-        void onClickPosition(int pos);
+        void onClickInvestigatorPosition(int pos);
     }
 }
 

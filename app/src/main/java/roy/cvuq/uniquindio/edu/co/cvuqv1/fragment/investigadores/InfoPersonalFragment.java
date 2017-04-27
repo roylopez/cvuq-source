@@ -31,7 +31,6 @@ public class InfoPersonalFragment extends Fragment implements AdaptadorDeGrupo.O
 
     public static InfoPersonalFragment newInstance(Investigador investigador) {
         InfoPersonalFragment info = new InfoPersonalFragment();
-        Log.i("TAG", investigador.getGrupo().getSigla());
         info.setInvestigador(investigador);
         Bundle bundle = new Bundle();
         info.setArguments(bundle);

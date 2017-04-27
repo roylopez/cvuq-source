@@ -3,21 +3,156 @@
 
     <item
         is-multidex="true"
-        jar="D:\DEV\ANDROID\AndroidUniquindio\CVUQV1\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Richard\.android\build-cache\09b1eb126cd73920be2d13ca1b1c98fa2504b7e6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9e6ffedd9018a2e2b7cfc088163ab2d89079d1fc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\612153f9eefb41748f4d74f290d4a242a5b5d889\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_92dc1c8341d792d11b0f47696ae142d0fb58f2a8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\18985f18651ba9eb65c7e89c626db3ae9ba35a10\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1f6fadb2de257e0cd7d4d3ff9fabbe4d124c7f54\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\9c3639546c2737279dd247770dfaec2948230c23\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f48926cc78df95a2d7f9a606fd0036bfea6a23f3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\baebc88b4081be7e71caff70fb746572cb5575c9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3a1bac2cc31df44dbf1f9bbf2c675319503c9271">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e93652f6f784f4920b9473374644e4468339b701\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\3756fa610dc01b03a5e4cdacb87cd1e7817e7dae\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_061caeed6b56314d6dc37235b041d0e9c49b94df\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\d0767d92d968b490ab770786463f97578a094086\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_353ec6ab24cc1b558f12a6655b118816f1142d72\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\47d1a408b4959991743a59f0415c7608adeb7a5d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0fd2f770bf90e021a7a685d0907399e0602a201a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="D:\DEV\ANDROID\AndroidUniquindio\CVUQV1\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_ad33ddecde4716d14ff52cc9b3f00e70dedc3d6d\classes.dex" />
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_622696b4b932fb0769259456e66c6dfa357d210b\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\DEV\ANDROID\AndroidUniquindio\CVUQV1\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Richard\.android\build-cache\6ee4307e131f5c22e45e9ab964ad0eefb6114f03\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="8f9739e4218d57e3b89299480d7bd3a801866693">
-        <dex dex="D:\DEV\ANDROID\AndroidUniquindio\CVUQV1\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_3ba788cb2be60ac06ecc0e2345c12160f5ed22a6\classes.dex" />
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_caabca2080dca9972d7ea19313ff5cc582242c9c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\59995845b959717740248597706866608b2e7014\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4b420e2c86c7c0ae43d012ec60b9e2101f79d581\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9c8538d0fe10d3918cb66e163c92f668f76788b4">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_da0706cac7e4fc117b675fbf9804bf5549e0ba20\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\cbb0fa4f4f997403c17c29d431d42b5082edfd6a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5309d964fb21a533da1441b04b89c9b308e71b3c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_4fd3932fa275074158fa7e718f0011538dde6d2e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\ae030304a55ae0b79cbc2d9a82e86cb2df991e32\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2d2c080eb5d44f008b15a03296db2abc2634e284\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\74643fa93325743d8e5fc38c290db06d51d59d3e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_26bdf327e10798f95b82f993f0c4b899aab1fa6a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Richard\.android\build-cache\13f6a7b89b3075e8c04a5ba49ac3ffb8adea2a19\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\Richard\Desktop\CVUQ\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c22f51862429fc9380f50eabe81eeb9da9a28062\classes.dex" />
     </item>
 
 </items>

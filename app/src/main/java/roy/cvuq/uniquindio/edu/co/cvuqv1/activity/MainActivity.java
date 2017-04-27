@@ -208,6 +208,8 @@ public class MainActivity extends AppCompatActivity implements
                 drawFragmentWithContextName(fragmentAfterBackPress, R.string.texto_lista_investigadores, fragmentAfterBackPress.getTag());
             } else if (fragmentAfterBackPress instanceof AddGroupFragment) {
                 drawFragmentWithContextName(new AddGroupFragment(), R.string.texto_nuevo_grupo, fragmentAfterBackPress.getTag());
+            } else if(fragmentAfterBackPress instanceof SearchFragment){
+                drawFragmentWithContextName(fragmentAfterBackPress, R.string.texto_titulo_search, fragmentAfterBackPress.getTag());
             }
 
             //condicionar con instanceof para saber que fragmento redibujar
