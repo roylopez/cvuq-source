@@ -48,12 +48,13 @@ public class ListaInvestigadoresFragment extends Fragment implements AdaptadorDe
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         listadoDeInvestigadores = (RecyclerView) getView().findViewById(R.id.listaInvestigadores);
-        adaptador = new AdaptadorDeInvestigador(investigadores, this);
+        adaptador = new AdaptadorDeInvestigador(investigadores, this, "integrante");
         listadoDeInvestigadores.setAdapter(adaptador);
         listadoDeInvestigadores.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
     }
 
-    public void onClickPosition(int pos) {
+    @Override
+    public void onClickInvestigatorPosition(int pos, String tipo) {
         listener.onInvestigadorSeleccionado(investigadores.get(pos));
     }
 
@@ -64,6 +65,7 @@ public class ListaInvestigadoresFragment extends Fragment implements AdaptadorDe
     public void setInvestigadores(ArrayList<Investigador> investigadores) {
         this.investigadores = investigadores;
     }
+
 
     public interface OnInvestigadorSeleccionadoListener {
         void onInvestigadorSeleccionado(Investigador investigador);
@@ -152,7 +154,7 @@ public class ListaInvestigadoresFragment extends Fragment implements AdaptadorDe
         i2.setNombre("Pepita");
         i2.setGenero("Femenino");
         i2.setFormacion("Ing Sistemas y yap");
-        i2.setGrupo(g1);
+
         i2.setLink("www.cvlac.com/pepita");
         i2.setEmail("pepita@uq.com");
         i2.setCategoria("Categoria 1");
@@ -198,6 +200,13 @@ public class ListaInvestigadoresFragment extends Fragment implements AdaptadorDe
         investigadores.add(i3);
         investigadores.add(i4);
         investigadores.add(i5);
+
+
+        g1.getInvestigadores().add(i2);
+        g1.getInvestigadores().add(i3);
+        g1.getInvestigadores().add(i4);
+
+        i2.setGrupo(g1);
 
     }
 }

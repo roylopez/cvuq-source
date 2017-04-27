@@ -2,6 +2,7 @@ package roy.cvuq.uniquindio.edu.co.cvuqv1.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,16 +18,18 @@ public class AdaptadorDeInvestigador extends RecyclerView.Adapter<AdaptadorDeInv
 
     private ArrayList<Investigador> investigadores;
     private static OnClickAdaptadorDeInvestigador listener;
+    private String tipo;
 
-    public AdaptadorDeInvestigador(ArrayList<Investigador> investigadores, Fragment listaInvestigadoresFragment) {
+    public AdaptadorDeInvestigador(ArrayList<Investigador> investigadores, Fragment listaInvestigadoresFragment, String tipo) {
         this.investigadores = investigadores;
-        listener = (OnClickAdaptadorDeInvestigador) listaInvestigadoresFragment;
+        this.listener = (OnClickAdaptadorDeInvestigador) listaInvestigadoresFragment;
+        this.tipo = tipo;
     }
 
     @Override
     public InvestigadorViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.resumen_investigadores, parent, false);
-        InvestigadorViewHolder investigadorVH = new InvestigadorViewHolder(itemView);
+        InvestigadorViewHolder investigadorVH = new InvestigadorViewHolder(itemView, tipo);
         return investigadorVH;
     }
 
@@ -48,8 +51,9 @@ public class AdaptadorDeInvestigador extends RecyclerView.Adapter<AdaptadorDeInv
         private TextView txtLinea1;
         private TextView txtLinea2;
         private TextView txtLinea3;
+        private String tipo;
 
-        public InvestigadorViewHolder(View itemView) {
+        public InvestigadorViewHolder(View itemView, String tipo) {
             super(itemView);
             itemView.setOnClickListener(this);
             txtNombreInvestigador = (TextView) itemView.findViewById(R.id.nombre_res);
@@ -57,6 +61,7 @@ public class AdaptadorDeInvestigador extends RecyclerView.Adapter<AdaptadorDeInv
             txtLinea1 = (TextView) itemView.findViewById(R.id.linea_inv1);
             txtLinea2 = (TextView) itemView.findViewById(R.id.linea_inv2);
             txtLinea3 = (TextView) itemView.findViewById(R.id.linea_inv3);
+            this.tipo = tipo;
         }
 
         public void binInvestigador(Investigador investigador) {
@@ -69,13 +74,13 @@ public class AdaptadorDeInvestigador extends RecyclerView.Adapter<AdaptadorDeInv
 
         @Override
         public void onClick(View view) {
-            listener.onClickPosition(getAdapterPosition());
+            listener.onClickInvestigatorPosition(getAdapterPosition(), tipo);
         }
 
     }
 
     public interface OnClickAdaptadorDeInvestigador {
-        void onClickPosition(int pos);
+        void onClickInvestigatorPosition(int pos, String tipo);
     }
 }
 

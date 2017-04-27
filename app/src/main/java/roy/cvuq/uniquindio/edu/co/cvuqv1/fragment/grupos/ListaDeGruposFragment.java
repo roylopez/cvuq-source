@@ -173,6 +173,9 @@ public class ListaDeGruposFragment extends Fragment implements AdaptadorDeGrupo.
         g1.setLink("www.cvlac.com/grid");
         g1.setLineasInvestigacion(lineasG4);
 
+        lider.setGrupo(g1);
+        i1.setGrupo(g1);
+        i2.setGrupo(g1);
 
         Grupo g2 = new Grupo();
         g2.setNombre("GEOIDE-G62");
@@ -182,6 +185,7 @@ public class ListaDeGruposFragment extends Fragment implements AdaptadorDeGrupo.
         g2.setLineasInvestigacion(lineasG2);
         g2.setLider(lider);
         g2.setInvestigadores(invest);
+
 
         Grupo g3 = new Grupo();
         g3.setNombre("SINFOCI");

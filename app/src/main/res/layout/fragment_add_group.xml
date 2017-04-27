@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    tools:context="roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.AddGroupFragment">
+    tools:context="roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.registro_gupo.AddGroupFragment">
 
     <ScrollView
         android:id="@+id/scroll_view_add_group"

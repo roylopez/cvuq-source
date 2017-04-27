@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import roy.cvuq.uniquindio.edu.co.cvuqv1.R;
-import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.NationalityFragment;
+import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.registro_investigador.NationalityFragment;
 
 /**
  * Created by USUARIO on 20/04/2017.

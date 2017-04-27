@@ -1,7 +1,6 @@
 package roy.cvuq.uniquindio.edu.co.cvuqv1.adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import roy.cvuq.uniquindio.edu.co.cvuqv1.R;
-import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.SelectInvestigatorsFragment;
+import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.registro_gupo.SelectInvestigatorsFragment;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.vo.Investigador;
 
 public class AdaptadorSeleccionInvestigadores extends RecyclerView.Adapter<AdaptadorSeleccionInvestigadores.InvestigadorViewHolder> {

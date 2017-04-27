@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.SearchFragment">
+    tools:context="roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.busqueda.SearchFragment">
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"

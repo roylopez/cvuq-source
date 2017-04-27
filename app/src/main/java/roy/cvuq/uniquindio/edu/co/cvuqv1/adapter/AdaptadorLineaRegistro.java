@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import roy.cvuq.uniquindio.edu.co.cvuqv1.R;
-import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.LineFragment;
+import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.registro_investigador.LineFragment;
 
 public class AdaptadorLineaRegistro extends RecyclerView.Adapter<AdaptadorLineaRegistro.LineViewHolder> {
 

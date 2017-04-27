@@ -1,6 +1,8 @@
 package roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.investigadores;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.R;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.adapter.AdaptadorDeGrupo;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.adapter.AdaptadorDeLinea;
+import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.grupos.ListaDeGruposFragment;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.vo.Grupo;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.vo.Investigador;
 
@@ -24,6 +27,7 @@ public class InfoPersonalFragment extends Fragment implements AdaptadorDeGrupo.O
     private RecyclerView grupo;
     private RecyclerView lineas;
     private Investigador investigador;
+    private ListaDeGruposFragment.OnGrupoSeleccionadoListener listener;
 
     public InfoPersonalFragment() {
         // Required empty public constructor
@@ -31,7 +35,6 @@ public class InfoPersonalFragment extends Fragment implements AdaptadorDeGrupo.O
 
     public static InfoPersonalFragment newInstance(Investigador investigador) {
         InfoPersonalFragment info = new InfoPersonalFragment();
-        Log.i("TAG", investigador.getGrupo().getSigla());
         info.setInvestigador(investigador);
         Bundle bundle = new Bundle();
         info.setArguments(bundle);
@@ -53,7 +56,6 @@ public class InfoPersonalFragment extends Fragment implements AdaptadorDeGrupo.O
         grupo = (RecyclerView) getView().findViewById(R.id.grupo_inv_info);
         ArrayList<Grupo> grupoInv = new ArrayList<>();
         grupoInv.add(investigador.getGrupo());
-        Log.i("Tag", grupoInv.size() + "Algo");
         AdaptadorDeGrupo adaptadorDeGrupo = new AdaptadorDeGrupo(grupoInv, this);
         grupo.setAdapter(adaptadorDeGrupo);
         grupo.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
@@ -74,6 +76,20 @@ public class InfoPersonalFragment extends Fragment implements AdaptadorDeGrupo.O
 
     @Override
     public void onClickPosition(int pos) {
+        //listener.onGrupoSeleccionado(investigador.getGrupo());
+    }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Activity activity;
+        if (context instanceof Activity) {
+            activity = (Activity) context;
+            try {
+                listener = (ListaDeGruposFragment.OnGrupoSeleccionadoListener) activity;
+            } catch (ClassCastException e) {
+                throw new ClassCastException(activity.toString() + " debe implementar la interfaz OnGrupoSeleccionadoListener");
+            }
+        }
     }
 }

@@ -10,19 +10,17 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import roy.cvuq.uniquindio.edu.co.cvuqv1.R;
-import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.AddGroupFragment;
-import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.AddInvestigatorFragment;
+import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.registro_gupo.AddGroupFragment;
+import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.registro_investigador.AddInvestigatorFragment;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.HomeFragment;
-import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.SearchDialogFragment;
-import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.SearchFragment;
+import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.busqueda.SearchDialogFragment;
+import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.busqueda.SearchFragment;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.grupos.ListaDeGruposFragment;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.grupos.TabFragmentDetalleGrupo;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.investigadores.ListaInvestigadoresFragment;
@@ -36,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements
         HomeFragment.OnOptionHomeListener,
         ListaInvestigadoresFragment.OnInvestigadorSeleccionadoListener,
         ListaDeGruposFragment.OnGrupoSeleccionadoListener,
-        SearchDialogFragment.OnSearchListener{
+        SearchDialogFragment.OnSearchListener {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -157,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onInvestigadorSeleccionado(Investigador investigador) {
+        isRestore = false;
         TabDetalleDeInvestigadorFragment fragment = new TabDetalleDeInvestigadorFragment();
         Bundle bundle = new Bundle();
         bundle.putParcelable("investigador", investigador);
@@ -166,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onGrupoSeleccionado(Grupo grupo) {
+        isRestore = false;
         TabFragmentDetalleGrupo fragment = new TabFragmentDetalleGrupo();
         Bundle bundle = new Bundle();
         bundle.putParcelable("grupo", grupo);
@@ -176,13 +176,13 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onSearchListener(ArrayList<Grupo> grupos, ArrayList<Investigador> investigadores) {
+        isRestore = false;
         SearchFragment searchFragment = new SearchFragment();
         Bundle bundle = new Bundle();
-        bundle.putParcelableArrayList("grupos",grupos);
-        bundle.putParcelableArrayList("investigadores",investigadores);
+        bundle.putParcelableArrayList("grupos", grupos);
+        bundle.putParcelableArrayList("investigadores", investigadores);
         searchFragment.setArguments(bundle);
-        drawFragmentWithContextName(searchFragment,R.string.texto_titulo_search,getResources().getString(R.string.tag_fragment_search));
-
+        drawFragmentWithContextName(searchFragment, R.string.texto_titulo_search, getResources().getString(R.string.tag_fragment_search));
     }
 
     @Override
@@ -208,12 +208,10 @@ public class MainActivity extends AppCompatActivity implements
                 drawFragmentWithContextName(fragmentAfterBackPress, R.string.texto_lista_investigadores, fragmentAfterBackPress.getTag());
             } else if (fragmentAfterBackPress instanceof AddGroupFragment) {
                 drawFragmentWithContextName(new AddGroupFragment(), R.string.texto_nuevo_grupo, fragmentAfterBackPress.getTag());
+            } else if (fragmentAfterBackPress instanceof SearchFragment) {
+                drawFragmentWithContextName(fragmentAfterBackPress, R.string.texto_titulo_search, fragmentAfterBackPress.getTag());
             }
 
-            //condicionar con instanceof para saber que fragmento redibujar
-            //drawFragmentWithContextName(fragmentAfterBackPress, R.string.texto_inicio, fragmentAfterBackPress.getTag());
-
-            //actualFragment = fragmentAfterBackPress;
         }
     }
 
