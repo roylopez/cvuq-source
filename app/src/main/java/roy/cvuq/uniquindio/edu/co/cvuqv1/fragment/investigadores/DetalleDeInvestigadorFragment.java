@@ -46,25 +46,25 @@ public class DetalleDeInvestigadorFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        txtNombre = (TextView)getView().findViewById(R.id.txtNombre);
-        txtNombre.setText(investigador.getNombre());
+        txtNombre = (TextView) getView().findViewById(R.id.txtNombre);
+        txtNombre.setText(investigador.getNombre().concat(" ").concat(investigador.getApellido()));
 
-        txtGenero = (TextView)getView().findViewById(R.id.txtGenero);
+        txtGenero = (TextView) getView().findViewById(R.id.txtGenero);
         txtGenero.setText(investigador.getGenero());
 
-        txtCategoria = (TextView)getView().findViewById(R.id.txtCategoria);
+        txtCategoria = (TextView) getView().findViewById(R.id.txtCategoria);
         txtCategoria.setText(investigador.getCategoria());
 
         txtEmail = (TextView) getView().findViewById(R.id.txtEmail);
         txtEmail.setText(investigador.getEmail());
 
-        txtFormacion = (TextView)getView().findViewById(R.id.txtFormacion);
+        txtFormacion = (TextView) getView().findViewById(R.id.txtFormacion);
         txtFormacion.setText(investigador.getFormacion());
 
-        txtLink = (TextView)getView().findViewById(R.id.txtLinkcvlac);
+        txtLink = (TextView) getView().findViewById(R.id.txtLinkcvlac);
         txtLink.setText(investigador.getLink());
 
-        txtNacionalidad = (TextView)getView().findViewById(R.id.txtNacionalidad);
+        txtNacionalidad = (TextView) getView().findViewById(R.id.txtNacionalidad);
         txtNacionalidad.setText(investigador.getNacionalidad());
     }
 

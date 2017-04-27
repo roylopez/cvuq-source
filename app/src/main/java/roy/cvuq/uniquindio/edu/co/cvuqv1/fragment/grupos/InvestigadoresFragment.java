@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,9 @@ public class InvestigadoresFragment extends Fragment implements AdaptadorDeInves
     private ArrayList<Investigador> investigadores;
     private ListaInvestigadoresFragment.OnInvestigadorSeleccionadoListener listener;
 
+    private TextView txtSinLider;
+    private TextView txtSinInvestigadores;
+
     public InvestigadoresFragment() {
         // Required empty public constructor
     }
@@ -49,26 +53,41 @@ public class InvestigadoresFragment extends Fragment implements AdaptadorDeInves
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_investigadores, container, false);
+
+        View vista = inflater.inflate(R.layout.fragment_investigadores, container, false);
+
+        txtSinLider = (TextView) vista.findViewById(R.id.grupo_sin_lider);
+        txtSinLider.setVisibility(View.INVISIBLE);
+
+        txtSinInvestigadores = (TextView) vista.findViewById(R.id.grupo_sin_investigadores);
+        txtSinInvestigadores.setVisibility(View.INVISIBLE);
+
+        return vista;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        listadoIntegrantes = (RecyclerView) getView().findViewById(R.id.listaIntegrantes);
-        adaptador = new AdaptadorDeInvestigador(investigadores, this, "integrante");
+        if (investigadores.size() > 0) {
+            listadoIntegrantes = (RecyclerView) getView().findViewById(R.id.listaIntegrantes);
+            adaptador = new AdaptadorDeInvestigador(investigadores, this, "integrante");
+            listadoIntegrantes.setAdapter(adaptador);
+            listadoIntegrantes.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        } else {
+            txtSinInvestigadores.setVisibility(View.VISIBLE);
+        }
 
-        listadoIntegrantes.setAdapter(adaptador);
-        listadoIntegrantes.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-
-
-        listadoIntegrantes = (RecyclerView) getView().findViewById(R.id.lider_lista);
-        ArrayList<Investigador> lider_list = new ArrayList<>();
-        lider_list.add(lider_investigador);
-        adaptador = new AdaptadorDeInvestigador(lider_list, this, "lider");
-        listadoIntegrantes.setAdapter(adaptador);
-        listadoIntegrantes.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        if (lider_investigador != null) {
+            listadoIntegrantes = (RecyclerView) getView().findViewById(R.id.lider_lista);
+            ArrayList<Investigador> lider_list = new ArrayList<>();
+            lider_list.add(lider_investigador);
+            adaptador = new AdaptadorDeInvestigador(lider_list, this, "lider");
+            listadoIntegrantes.setAdapter(adaptador);
+            listadoIntegrantes.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        } else {
+            txtSinLider.setVisibility(View.VISIBLE);
+        }
 
     }
 

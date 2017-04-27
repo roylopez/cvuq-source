@@ -45,6 +45,7 @@
     <string name="texto_cambiar_fotografia">Cambiar fotografía</string>
 
     <string name="texto_datos_personales">Datos Personales</string>
+    <string name="texto_informacion_adicional">Información Adicional</string>
     <string name="texto_seleccionar_imagen">Selleciona la imagen</string>
     <string name="texto_nombre_inv">Nombre:</string>
     <string name="texto_genero_inv">Genero:</string>
@@ -64,6 +65,12 @@
     <string name="texto_titulo_lista_grupos">Grupos de investigación</string>
     <string name="texto_titulo_lista_investigadores">Investigadores</string>
     <string name="texto_titulo_search">Búsqueda</string>
+
+    <string name="texto_investigador_sin_grupo">Este investigador no pertenece a ningun grupo de investigación</string>
+    <string name="texto_investigador_sin_lineas">Este investigador no posee lineas de investigación</string>
+    <string name="texto_grupo_sin_lineas">Este grupo no posee lineas de investigación</string>
+    <string name="texto_grupo_sin_investigadores">Este grupo no posee investigadores</string>
+    <string name="texto_grupo_sin_lider">Este grupo no tiene lider</string>
 
     <string-array name="nacionalidades">
         <item>Colombia</item>

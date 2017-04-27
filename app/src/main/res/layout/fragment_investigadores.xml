@@ -36,6 +36,14 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp" />
 
+            <TextView
+                android:id="@+id/grupo_sin_lider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_grupo_sin_lider"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
             <android.support.design.widget.CoordinatorLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -70,6 +78,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:id="@+id/grupo_sin_investigadores"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/texto_grupo_sin_investigadores"
+                        android:textAlignment="center"
+                        android:textSize="25sp" />
 
                 </android.support.design.widget.AppBarLayout>
           </android.support.design.widget.CoordinatorLayout>

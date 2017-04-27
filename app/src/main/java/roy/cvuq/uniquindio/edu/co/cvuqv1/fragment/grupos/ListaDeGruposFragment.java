@@ -171,6 +171,7 @@ public class ListaDeGruposFragment extends Fragment implements AdaptadorDeGrupo.
         g1.setLider(lider);
         g1.setInvestigadores(invest);
         g1.setLink("www.cvlac.com/grid");
+
         g1.setLineasInvestigacion(lineasG4);
 
         lider.setGrupo(g1);

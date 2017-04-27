@@ -10,17 +10,20 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import roy.cvuq.uniquindio.edu.co.cvuqv1.R;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.adapter.AdaptadorDeLinea;
 
-public class LineasInvestigacionFragment extends Fragment implements AdaptadorDeLinea.OnClickAdaptadorDeLinea{
+public class LineasInvestigacionFragment extends Fragment implements AdaptadorDeLinea.OnClickAdaptadorDeLinea {
 
     AdaptadorDeLinea adaptador;
     RecyclerView listadoLineas;
     ArrayList<String> lineas;
+
+    private TextView txtSinLineas;
 
     public LineasInvestigacionFragment() {
     }
@@ -39,17 +42,26 @@ public class LineasInvestigacionFragment extends Fragment implements AdaptadorDe
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lineas_investigacion, container, false);
+        View vista = inflater.inflate(R.layout.fragment_lineas_investigacion, container, false);
+
+        txtSinLineas = (TextView) vista.findViewById(R.id.grupo_sin_lineas);
+        txtSinLineas.setVisibility(View.INVISIBLE);
+
+        return vista;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        listadoLineas= (RecyclerView)getView().findViewById(R.id.listaLineas);
-        adaptador = new AdaptadorDeLinea(lineas,this);
-        listadoLineas.setAdapter(adaptador);
-        listadoLineas.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        if (lineas.size() > 0) {
+            listadoLineas = (RecyclerView) getView().findViewById(R.id.listaLineas);
+            adaptador = new AdaptadorDeLinea(lineas, this);
+            listadoLineas.setAdapter(adaptador);
+            listadoLineas.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        } else {
+            txtSinLineas.setVisibility(View.VISIBLE);
+        }
 
     }
 
@@ -79,6 +91,6 @@ public class LineasInvestigacionFragment extends Fragment implements AdaptadorDe
 
     @Override
     public void onClickPosition(int pos) {
-        Log.d("Hola","bu");
+        Log.d("Hola", "bu");
     }
 }

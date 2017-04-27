@@ -18,10 +18,12 @@ public class AdaptadorDeGrupo extends RecyclerView.Adapter<AdaptadorDeGrupo.Grup
 
     private ArrayList<Grupo> grupo;
     private static OnClickAdaptadorDeGrupo listener;
+    private static Fragment context;
 
     public AdaptadorDeGrupo(ArrayList<Grupo> grupo, Fragment listaDeGruposFragment) {
         this.grupo = grupo;
         listener = (OnClickAdaptadorDeGrupo) listaDeGruposFragment;
+        this.context = listaDeGruposFragment;
     }
 
     @Override
@@ -69,8 +71,18 @@ public class AdaptadorDeGrupo extends RecyclerView.Adapter<AdaptadorDeGrupo.Grup
         public void binGrupo(Grupo grupo) {
             txtNombreGrupo.setText(grupo.getNombre());
             txtSigla.setText(grupo.getSigla());
-            txtLinea1.setText((String) grupo.getLineasInvestigacion().get(0));
-            txtLinea2.setText((String) grupo.getLineasInvestigacion().get(1));
+
+            if (grupo.getLineasInvestigacion().size() < 2) {
+                if (grupo.getLineasInvestigacion().size() == 1) {
+                    txtLinea1.setText((String) grupo.getLineasInvestigacion().get(0));
+                } else {
+                    txtLinea1.setText(context.getResources().getString(R.string.texto_grupo_sin_lineas));
+                }
+            } else {
+                txtLinea1.setText((String) grupo.getLineasInvestigacion().get(0));
+                txtLinea2.setText((String) grupo.getLineasInvestigacion().get(1));
+            }
+
         }
 
         @Override

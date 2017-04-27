@@ -10,4 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <TextView
+        android:id="@+id/grupo_sin_lineas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_grupo_sin_lineas"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
 </FrameLayout>

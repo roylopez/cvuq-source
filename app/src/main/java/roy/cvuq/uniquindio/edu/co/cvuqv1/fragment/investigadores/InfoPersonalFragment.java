@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,9 @@ public class InfoPersonalFragment extends Fragment implements AdaptadorDeGrupo.O
     private RecyclerView lineas;
     private Investigador investigador;
     private ListaDeGruposFragment.OnGrupoSeleccionadoListener listener;
+
+    private TextView txtSinGrupo;
+    private TextView txtSinLineas;
 
     public InfoPersonalFragment() {
         // Required empty public constructor
@@ -46,7 +50,15 @@ public class InfoPersonalFragment extends Fragment implements AdaptadorDeGrupo.O
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info_personal, container, false);
+        View view = inflater.inflate(R.layout.fragment_info_personal, container, false);
+
+        txtSinGrupo = (TextView) view.findViewById(R.id.investigador_sin_grupo);
+        txtSinGrupo.setVisibility(View.INVISIBLE);
+
+        txtSinLineas = (TextView) view.findViewById(R.id.investigador_sin_lineas);
+        txtSinLineas.setVisibility(View.INVISIBLE);
+
+        return view;
     }
 
     @Override
@@ -56,14 +68,24 @@ public class InfoPersonalFragment extends Fragment implements AdaptadorDeGrupo.O
         grupo = (RecyclerView) getView().findViewById(R.id.grupo_inv_info);
         ArrayList<Grupo> grupoInv = new ArrayList<>();
         grupoInv.add(investigador.getGrupo());
-        AdaptadorDeGrupo adaptadorDeGrupo = new AdaptadorDeGrupo(grupoInv, this);
-        grupo.setAdapter(adaptadorDeGrupo);
-        grupo.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
-        lineas = (RecyclerView) getView().findViewById(R.id.lineas_inv_info);
-        AdaptadorDeLinea adaptadorDeLinea = new AdaptadorDeLinea(investigador.getLineasInvestigacion(), this);
-        lineas.setAdapter(adaptadorDeLinea);
-        lineas.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        if(investigador.getGrupo() != null){
+            AdaptadorDeGrupo adaptadorDeGrupo = new AdaptadorDeGrupo(grupoInv, this);
+            grupo.setAdapter(adaptadorDeGrupo);
+            grupo.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        } else {
+            txtSinGrupo.setVisibility(View.VISIBLE);
+        }
+
+        if(investigador.getLineasInvestigacion().size() > 0){
+            lineas = (RecyclerView) getView().findViewById(R.id.lineas_inv_info);
+            AdaptadorDeLinea adaptadorDeLinea = new AdaptadorDeLinea(investigador.getLineasInvestigacion(), this);
+            lineas.setAdapter(adaptadorDeLinea);
+            lineas.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        } else {
+            txtSinLineas.setVisibility(View.VISIBLE);
+        }
+
     }
 
     public Investigador getInvestigador() {

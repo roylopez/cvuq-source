@@ -102,9 +102,9 @@ public class TabDetalleDeInvestigadorFragment extends Fragment {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Datos Personales";
+                    return getResources().getString(R.string.texto_datos_personales);
                 case 1:
-                    return "Información Personal";
+                    return getResources().getString(R.string.texto_informacion_adicional);
             }
             return null;
         }
