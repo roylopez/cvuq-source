@@ -10,6 +10,7 @@
     <dimen name="toolbar_text_size">25sp</dimen>
     <dimen name="height_toolbar">35dp</dimen>
 
+    <!--Dimens detalle de grupo -->
     <dimen name="margen_img">1dp</dimen>
     <dimen name="margen_end_img">5dp</dimen>
     <dimen name="tamanio_imagen_width">368dp</dimen>
@@ -23,5 +24,24 @@
     <dimen name="left_txt_detalleGrupo">5dp</dimen>
     <dimen name="top_txt_detalleGrupo">5dp</dimen>
     <dimen name="sigla_toolbar_top">5dp</dimen>
+
+    <!-- Dimens lista investigador -->
+    <dimen name="width_img_inv_det">100dp</dimen>
+    <dimen name="heigth_img_inv_det">100dp</dimen>
+    <dimen name="margin_str_nom_inv_det">10dp</dimen>
+    <dimen name="textSize_inv_det">15dp</dimen>
+
+    <!-- Dimens Detalle Investigador-->
+    <dimen name="width_fondo_det_inv">175dp</dimen>
+    <dimen name="width_img_det_inv">190dp</dimen>
+    <dimen name="heigth_img_det_inv">190dp</dimen>
+    <dimen name="textSize_tituloDatos">30sp</dimen>
+    <dimen name="width_linea">70pt</dimen>
+    <dimen name="heigth_linea">8dp</dimen>
+    <dimen name="contenedor_marginStart">20dp</dimen>
+    <dimen name="txtE_marginEnd">20pt</dimen>
+    <dimen name="txtE_marginStart">170dp</dimen>
+    <dimen name="textSize_txtE">20sp</dimen>
+    <dimen name="textSize_txt">22sp</dimen>
 
 </resources>
