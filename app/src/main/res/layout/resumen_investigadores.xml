@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/resumen_investigadores"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:padding="8dp"
+    card_view:cardBackgroundColor="#FFFFFF"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="7dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="false"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="@dimen/width_imagen_listaGrupos"
+            android:layout_height="100dp"
+            android:padding="1dp"
+            android:background="@color/colorBlack"
+            android:src="@drawable/image_investigator_fondoblanco"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="false"
+        android:layout_toEndOf="@+id/imagen"
+        android:padding="1dp">
+
+        <TextView
+            android:id="@+id/nombre_res"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/imagen"
+            android:text="Nombre Investigador"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/apellido_res"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/nombre_res"
+            android:layout_below="@id/nombre_res"
+            android:layout_marginTop="2dp"
+            android:text="Apellido investigador"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/linea_inv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/apellido_res"
+            android:layout_below="@+id/apellido_res"
+            android:layout_marginTop="2dp"
+            android:text="Linea inv 1"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/linea_inv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/linea_inv1"
+            android:layout_below="@+id/linea_inv1"
+            android:layout_marginTop="2dp"
+            android:textSize="18sp"
+            android:text="linea Inv 1" />
+
+        <TextView
+            android:id="@+id/linea_inv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/linea_inv2"
+            android:layout_below="@+id/linea_inv2"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/imagen"
+            android:textSize="18sp"
+            android:text="linea Inv 2" />
+
+    </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

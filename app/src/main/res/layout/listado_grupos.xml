@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/resumen_grupo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:padding="4dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="7dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="@dimen/width_imagen_listaGrupos"
+            android:layout_height="@dimen/heigth_imagen_listaGrupos"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/margen_end_img"
+            android:src="@drawable/group_accent" />
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_toEndOf="@+id/imagen">
+
+            <TextView
+                android:id="@+id/nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/imagen"
+                android:text="Grupo 1"
+                android:textSize="@dimen/textSize_card_grupos" />
+
+            <TextView
+                android:id="@+id/sigla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nombre"
+                android:layout_toEndOf="@+id/imagen"
+                android:text="Sigla"
+                android:textSize="@dimen/textSize_card_grupos" />
+
+            <TextView
+                android:id="@+id/linea1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sigla"
+                android:layout_toEndOf="@+id/imagen"
+                android:text="Línea de investigación 1"
+                android:textSize="@dimen/textSize_card_grupos" />
+
+            <TextView
+                android:id="@+id/linea2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linea1"
+                android:layout_toEndOf="@+id/imagen"
+                android:text="Línea de investigación 2"
+                android:textSize="@dimen/textSize_card_grupos" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
