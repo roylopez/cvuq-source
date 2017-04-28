@@ -51,11 +51,28 @@ public class ListaInvestigadoresFragment extends Fragment implements AdaptadorDe
         adaptador = new AdaptadorDeInvestigador(investigadores, this, "integrante");
         listadoDeInvestigadores.setAdapter(adaptador);
         listadoDeInvestigadores.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+
+        if (getView().findViewById(R.id.detalle_investigador) != null) {
+            TabDetalleDeInvestigadorFragment fragmentoDetalle = new TabDetalleDeInvestigadorFragment();
+            Bundle bundle = new Bundle();
+            bundle.putParcelable("investigador", investigadores.get(0));
+            fragmentoDetalle.setArguments(bundle);
+            drawFragmentDetalle(fragmentoDetalle);
+        }
     }
 
     @Override
     public void onClickInvestigatorPosition(int pos, String tipo) {
-        listener.onInvestigadorSeleccionado(investigadores.get(pos));
+
+        if (getView().findViewById(R.id.detalle_investigador) != null) {
+            TabDetalleDeInvestigadorFragment fragmentoDetalle = new TabDetalleDeInvestigadorFragment();
+            Bundle bundle = new Bundle();
+            bundle.putParcelable("investigador", investigadores.get(pos));
+            fragmentoDetalle.setArguments(bundle);
+            drawFragmentDetalle(fragmentoDetalle);
+        } else {
+            listener.onInvestigadorSeleccionado(investigadores.get(pos));
+        }
     }
 
     public ArrayList<Investigador> getInvestigadores() {
@@ -66,6 +83,11 @@ public class ListaInvestigadoresFragment extends Fragment implements AdaptadorDe
         this.investigadores = investigadores;
     }
 
+    private void drawFragmentDetalle(Fragment fragment) {
+        getFragmentManager().beginTransaction()
+                .replace(R.id.detalle_investigador, fragment)
+                .commit();
+    }
 
     public interface OnInvestigadorSeleccionadoListener {
         void onInvestigadorSeleccionado(Investigador investigador);

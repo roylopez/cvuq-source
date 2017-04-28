@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -156,11 +157,20 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onInvestigadorSeleccionado(Investigador investigador) {
         isRestore = false;
+
         TabDetalleDeInvestigadorFragment fragment = new TabDetalleDeInvestigadorFragment();
         Bundle bundle = new Bundle();
+
+        /*
+        Grupo grupo = investigador.getGrupo();
+        grupo.setLider(null);
+        grupo.setInvestigadores(new ArrayList<>());
+        */
+
         bundle.putParcelable("investigador", investigador);
         fragment.setArguments(bundle);
         drawFragmentWithContextName(fragment, R.string.texto_titulo_lista_investigadores, getResources().getString(R.string.tag_fragment_detalleinvestigador));
+
     }
 
     @Override
@@ -172,7 +182,6 @@ public class MainActivity extends AppCompatActivity implements
         fragment.setArguments(bundle);
         drawFragmentWithContextName(fragment, R.string.texto_grupos, getResources().getString(R.string.tag_fragment_detallegrupo));
     }
-
 
     @Override
     public void onSearchListener(ArrayList<Grupo> grupos, ArrayList<Investigador> investigadores) {

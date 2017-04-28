@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,28 +25,26 @@ public class TabDetalleDeInvestigadorFragment extends Fragment {
     public static int int_items = 2;
     private Investigador investigador;
 
-    @Nullable
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        investigador = new Investigador();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        /**
-         *Inflate tab_layout and setup Views.
-         */
-        investigador = getArguments().getParcelable("investigador");
+
+        if(getArguments() != null){
+            investigador = getArguments().getParcelable("investigador");
+        } else {
+            Log.v("nulo","nulo");
+        }
+
         View x = inflater.inflate(R.layout.fragment_tool_bar, null);
         tabLayout = (TabLayout) x.findViewById(R.id.tab_layout);
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
 
-
-        /**
-         *Set an Apater for the View Pager
-         */
         viewPager.setAdapter(new MyAdapter(getChildFragmentManager(), investigador));
-
-        /**
-         * Now , this is a workaround ,
-         * The setupWithViewPager dose't works without the runnable .
-         * Maybe a Support Library Bug .
-         */
 
         tabLayout.post(new Runnable() {
             @Override
@@ -54,8 +53,7 @@ public class TabDetalleDeInvestigadorFragment extends Fragment {
             }
         });
 
-        TextView txtTitulo = (TextView)
-                x.findViewById(R.id.txtTitulo_toolbar);
+        TextView txtTitulo = (TextView) x.findViewById(R.id.txtTitulo_toolbar);
         txtTitulo.setText(investigador.getNombre());
 
         return x;
@@ -110,4 +108,11 @@ public class TabDetalleDeInvestigadorFragment extends Fragment {
         }
     }
 
+    public Investigador getInvestigador() {
+        return investigador;
+    }
+
+    public void setInvestigador(Investigador investigador) {
+        this.investigador = investigador;
+    }
 }
