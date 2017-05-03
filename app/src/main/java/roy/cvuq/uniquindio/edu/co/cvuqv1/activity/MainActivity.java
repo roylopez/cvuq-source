@@ -29,6 +29,12 @@ import roy.cvuq.uniquindio.edu.co.cvuqv1.fragment.investigadores.TabDetalleDeInv
 import roy.cvuq.uniquindio.edu.co.cvuqv1.vo.Grupo;
 import roy.cvuq.uniquindio.edu.co.cvuqv1.vo.Investigador;
 
+/**
+ * Actividad principal de la aplicación
+ * @author Ricardo ayala
+ * @author Roy Lopez
+ * @author Jesica Tapasco
+ */
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener,
         View.OnClickListener,
@@ -44,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements
     private int IdContextName;
     private boolean isRestore;
 
+    /**
+     * Método que se ejecuta al crear la actividad
+     * @param savedInstanceState información a almacenar
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +85,11 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
+    /**
+     * Metodo que se encarga de los eventos del menu
+     * @param item item seleccionado
+     * @return retorna isRestore
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -114,6 +129,10 @@ public class MainActivity extends AppCompatActivity implements
         return true;
     }
 
+    /**
+     * Metodo que maneja los eventos de los botones
+     * @param v vista sobre la que se ejecutan los eventos
+     */
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.app_navigation_drawer_header) {
